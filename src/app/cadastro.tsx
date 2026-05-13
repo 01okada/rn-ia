@@ -5,7 +5,7 @@ export default function cadastroScreen(){
     return(
         <SafeAreaView>
             <View>
-                <Text>caScreen</Text>
+                <Text>cadastroScreen</Text>
             </View>
         </SafeAreaView>
     )
