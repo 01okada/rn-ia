@@ -1,14 +1,57 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Button } from "../componentes/Buttons";
 
 export default function sucessoScreen(){
     return(
         <SafeAreaView>
-            <View>
-                <Text>sucessoScreen</Text>
-            </View>
+            <View style ={styles.container}>
+                 <View style={styles.headerContainer}>
+                    <Text style={styles.title}>Cartão criado com sucesso</Text>
+                    <Text style={styles.subtitle}>Seu cartão de visita digital está pronto para uso!</Text>
+                 </View>
+                    <View style ={styles.footerContainer} >
+                      <Button label="Criar outro cartão"/>
+                      <Button label="Voltar ao inicio" variant="secondary"/>
+                    </View>
+         </View>
         </SafeAreaView>
     )
-
-
 }
+
+const styles = StyleSheet.create({
+    container:{
+        flexDirection:"column",
+        justifyContent:"center", 
+        height:"100%",
+        alignContent:"center",
+        paddingHorizontal: 24
+    },
+    headerContainer:{
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
+        height: 700,
+        gap: 10
+    },
+    title:{
+        color:"#2d2d30",
+        fontWeight:"bold",
+        fontSize:32,
+        width:200,
+        textAlign:"center"
+
+    },
+    subtitle:{
+        color:"#747477",
+        fontWeight:"400",
+        fontSize:16,
+        width:200,
+        textAlign:"center"
+    },
+   
+    footerContainer:{
+        flexDirection:"row",
+        gap: 10,
+    }
+})

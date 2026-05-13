@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+ const stylePrimary= StyleSheet.create({
    
     buttonContainer:{
         backgroundColor:"#29E5F2",
@@ -16,4 +16,25 @@ export const styles = StyleSheet.create({
         fontWeight:"500",
         fontSize:18
     }
+   
 })
+ const styleSecondary= StyleSheet.create({
+
+    buttonContainer:{
+        ...stylePrimary.buttonContainer,
+        backgroundColor:"transparent",
+       
+    },
+    buttonText:{
+          ...stylePrimary.buttonText,
+          color:"#29E5F2",
+    }
+   
+})
+
+
+export const styles ={
+    primary: stylePrimary,
+    secondary: styleSecondary,
+    outline : stylePrimary
+} as const

@@ -1,5 +1,6 @@
-import { StyleSheet, Text,TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Button } from "../componentes/Buttons";
 
 export default function HomeScreen(){
     return(
@@ -10,7 +11,7 @@ export default function HomeScreen(){
                     <Text style={styles.subtitle}>Seu cartão de visita digital</Text>
                  </View>
                     <View>
-                       
+                      <Button label="Criar meu Cartão"/>
                     </View>
          </View>
         </SafeAreaView>
@@ -20,7 +21,7 @@ export default function HomeScreen(){
 const styles = StyleSheet.create({
     container:{
         flexDirection:"column",
-        justifyContent:"center",
+        justifyContent:"center", 
         height:"100%",
         alignContent:"center",
         paddingHorizontal: 24
