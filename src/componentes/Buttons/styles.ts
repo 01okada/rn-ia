@@ -18,23 +18,35 @@ import { StyleSheet } from "react-native";
     }
    
 })
+
  const styleSecondary= StyleSheet.create({
 
     buttonContainer:{
         ...stylePrimary.buttonContainer,
         backgroundColor:"transparent",
-       
     },
     buttonText:{
           ...stylePrimary.buttonText,
           color:"#29E5F2",
     }
-   
 })
 
+ const styleOutline= StyleSheet.create({
 
+    buttonContainer:{
+        ...stylePrimary.buttonContainer,
+        backgroundColor:"transparent",
+        borderColor:"#29E5F2",
+        borderWidth: 2
+    },
+    buttonText:{
+          ...stylePrimary.buttonText,
+          color:"#29E5F2",
+    }
+})
+ 
 export const styles ={
     primary: stylePrimary,
     secondary: styleSecondary,
-    outline : stylePrimary
+    outline : styleOutline,
 } as const
