@@ -1,8 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button } from "../componentes/Buttons";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { Form } from "./cadastro";
+import { DevCard } from "../componentes/DevCard";
 
-export default function sucessoScreen(){
+export default function SucessoScreen(){
+    const router = useRouter()
+    const params = useLocalSearchParams() as unknown as Form
+    
+    
     return(
         <SafeAreaView>
             <View style ={styles.container}>
@@ -10,9 +17,10 @@ export default function sucessoScreen(){
                     <Text style={styles.title}>Cartão criado com sucesso</Text>
                     <Text style={styles.subtitle}>Seu cartão de visita digital está pronto para uso!</Text>
                  </View>
+                 <DevCard data={params} />
                     <View style ={styles.footerContainer} >
-                      <Button label="Criar outro cartão"/>
-                      <Button label="Voltar ao inicio" variant="secondary"/>
+                      <Button label="Criar outro cartão" onPress={() => router.push("/cadastro")}/>
+                      <Button label="Voltar ao inicio" variant="secondary" onPress={() => router.replace("index")}/>
                     </View>
          </View>
         </SafeAreaView>
@@ -51,7 +59,7 @@ const styles = StyleSheet.create({
     },
    
     footerContainer:{
-        flexDirection:"row",
+        flexDirection:"column",
         gap: 10,
     }
 })
