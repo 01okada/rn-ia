@@ -13,11 +13,11 @@ export const styles = StyleSheet.create({
     cardAvatarContainer:{
         backgroundColor: "#38cab7",
         padding: 4,
-        borderRadius: "100%"
+        borderRadius: 44
     },
     cardAvatarSubContainer:{
-        backgroundColor: "f8fbff",
-        borderRadius: "100%",
+        backgroundColor: "#f8fbff",
+        borderRadius: 40,
         height: 80,
         width: 80,
         justifyContent:"center",

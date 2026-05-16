@@ -13,7 +13,7 @@ type Props ={
     onSelect: (colorCode: string) => void
 }
 
-export function ButtonColors({group, onSelect}: Props){ {
+export function ButtonColors({group, onSelect}: Props){
     const [selected, setSelected]  = useState<GroupItems | null>(null)
 
     function handleSelect(item: GroupItems){
@@ -23,9 +23,11 @@ export function ButtonColors({group, onSelect}: Props){ {
      useEffect(() => {
         const firstItem = group.at(0)
         if(firstItem){
-            handleSelect(firstItem)
+            setSelected(firstItem)
+            onSelect(firstItem.colorCode)
         }
-     }, [group])
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+     }, [])
 
     return (
         <View style={styles.buttonGroupContainer}>
@@ -37,5 +39,4 @@ export function ButtonColors({group, onSelect}: Props){ {
             ))}
         </View>
     )
-}
 }

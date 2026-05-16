@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     buttonGroupButtonColorIndicator: {
         height: 24,
         width: 24,
-        borderRadius: "100%",
+        borderRadius: 12,
     },
     buttonGroupButtonText: {
         color: "#7d7d7d",

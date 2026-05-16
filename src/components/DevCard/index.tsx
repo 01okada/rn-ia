@@ -1,14 +1,14 @@
 import { Text, View } from "react-native";
 import { styles } from "./styles";
-import { Form } from "../../app/cadastro";
+import { Form } from "../../types/form";
 
 type Props = {
     data: Form
 }
 export function DevCard({ data }: Props) {
     return (
-        <View style={[styles.cardContainer, { backgroundColor: data.colorID }]}>
-            <View style={styles.cardAvatarContainer}>
+        <View style={[styles.cardContainer, { backgroundColor: data.cardColor }]}>
+            <View style={[styles.cardAvatarContainer, { backgroundColor: data.cardColor }]}>
                 <View style={styles.cardAvatarSubContainer}>
                     <Text style={styles.cardAvatarSubLetter}>{data.fullName.charAt(0)}</Text>
                 </View>
@@ -18,7 +18,7 @@ export function DevCard({ data }: Props) {
                 <Text style={styles.cardTitle}> {data.fullName}</Text>
                 <View style={styles.cardTextGroup}>
                     <Text style={styles.cardText}>{data.role}</Text>
-                    {data.company && <Text style={styles.cardText}> | {data.company}</Text>}
+                    {data.company ? <Text style={styles.cardText}> | {data.company}</Text> : null}
                 </View>
             </View>
 
